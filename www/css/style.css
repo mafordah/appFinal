@@ -1,0 +1,33 @@
+body{
+
+}
+
+p{
+
+}
+
+h1{
+
+}
+
+.center{
+  text-align: center;
+}
+
+.header{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 80px;
+  background-color: rgb(9, 29, 140);
+}
+
+.nav{
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 80px;
+  background-color: rgb(9, 29, 140);
+}
