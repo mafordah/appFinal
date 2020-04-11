@@ -1,5 +1,5 @@
 body{
-
+  background-color: rgb(252, 187, 214);
 }
 
 p{
@@ -8,6 +8,10 @@ p{
 
 h1{
 
+}
+
+input{
+  background-color: white;
 }
 
 .center{
@@ -20,7 +24,7 @@ h1{
   left: 0px;
   width: 100vw;
   height: 80px;
-  background-color: rgb(9, 29, 140);
+  background-color: rgb(252, 187, 214);
 }
 
 .nav{
@@ -29,5 +33,48 @@ h1{
   left: 0px;
   width: 100vw;
   height: 80px;
-  background-color: rgb(9, 29, 140);
+  background-color: rgb(252, 187, 214);
+}
+
+.menu{
+  border-radius: 20px;
+  width: 100%;
+  height: 300px;
+  margin: auto;
+  padding: 20px;
+  max-width: 400px;
+  background-color: white;
+}
+
+.menu button{
+  border: none;
+  border-radius: 20px;
+  background-color: rgb(66, 124, 254);
+  color: white;
+  margin: 10px;
+  padding: 10px;
+  width: 33%;
+  font-size: 13px;
+}
+
+.menu button:hover{
+  font-size: 15px;
+  width: 35%;
+}
+
+.menu .grey{
+  background-color: rgb(191, 191, 191);
+}
+
+.menu .grey:hover{
+  font-size: 13px;
+  width: 33%;
+}
+
+.chat{
+  width: 100%;
+  margin: auto;
+  padding: 20px;
+  max-width: 400px;
+  background-color: white;
 }
