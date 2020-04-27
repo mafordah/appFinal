@@ -21,11 +21,6 @@ input{
 }
 
 .header{
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100vw;
-  height: 80px;
   background-color: rgb(252, 187, 214);
 }
 
@@ -62,6 +57,22 @@ input{
 .menu .grey:hover{
   font-size: 13px;
   width: 33%;
+}
+
+.popUp{
+  position: absolute;
+  background-color: beige;
+  color: red;
+  height: 100px;
+  width: 200px;
+  position: absolute;
+  left: 50%;
+  margin-left: -150px;
+  top: 50%;
+  margin-top: -200px;
+  padding: 50px;
+  font-family: monospace, courier;
+  display: none;
 }
 
 .chat{

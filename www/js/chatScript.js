@@ -115,40 +115,42 @@ function change(){
     if (message.includes("yes")){
       state = 6;
     } else if (message.includes("no")){
-      state = 7;
+      state = 8;
     }
   } else if (state == 5){
     if (message.includes("yes")){
       state = 6;
     } else if (message.includes("no")){
-      state = 7;
+      state = 8;
     }
   } else if (state == 6){
     if (message.includes("yes")){
-      state = 7;
-    } else if (message.includes("no")){
       state = 8;
+    } else if (message.includes("no")){
+      state = 7;
     }
   } else if (state == 7){
-    if (message.includes("yes")){
-      state = 8;
-    } else if (message.includes("no")){
-      state = 9 ;
-    }
+
   } else if (state == 8){
     if (message.includes("yes")){
-      state = 10;
+      state = 9;
     } else if (message.includes("no")){
-      state = 11 ;
+      state = 10 ;
     }
   } else if (state == 9){
     if (message.includes("yes")){
-      state = 10;
+      state = 11;
     } else if (message.includes("no")){
-      state = 11 ;
+      state = 12 ;
     }
   } else if (state == 10){
+    if (message.includes("yes")){
+      state = 11;
+    } else if (message.includes("no")){
+      state = 12 ;
+    }
   } else if (state == 11){
+  } else if (state == 12){
   }
 
   var responses = [
@@ -159,6 +161,7 @@ function change(){
     "That's odd, my sources show the app was only open for a matter of seconds, but ok. Did you have any difficulty opening the app?",
     "I see. It looks as though you could only access the game for a few seconds. Did you have any difficulty opening the app?",
     "Strange, there do not appear to be any errors in start log. Are you certain you hit the start button hard enough?",
+    "Please restart your game with ample button pressure",
     "This must be a developement error. Would you like me to send a report to the developer?",
     "I lack that capability. But I can offer you alternate gameplay? Are you still interested in automated companionship?",
     "Good, I am unable to preform that function. Are you still interested in automated companionship?"];
