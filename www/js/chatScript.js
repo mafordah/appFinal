@@ -1,23 +1,46 @@
 var textLog = ["<span style='color:rgb(66, 124, 254)'><strong>Customer Service: </strong></span> It appears your game has malfunctioned. Respond 'HELP' for additional service."];
 var send = document.getElementById('button');
+var save = document.getElementById('save');
 var input = document.getElementById('input');
 var message;
 var dots = document.getElementById('dots');
 
-var player = [name];
-//Default response
-var response = "Sorry, I'm not sure I understand.";
-var goBack = false;
+var player = ["name", "state"];
+var state;
+var response;
 
 send.addEventListener("click", chat);
+save.addEventListener("click", saveGame);
+
 
 input.addEventListener('keydown', pending);
 input.addEventListener('keyup', pending);
 
-//show message at start
-setTimeout(function(){
+
+//load game if there is a game to load
+if (localStorage.getItem("gameData") === null && localStorage.getItem("allText") === null) {
+  startGame();
+} else {
+  loadGame();
+}
+
+//show message at start of new game
+function startGame(){
+  state = 0;
+  setTimeout(function(){
+    document.getElementById("text").innerHTML = textLog.join("<br><br>");
+  }, 2000);
+}
+
+
+function loadGame(){
+  savedGame = localStorage.getItem("gameData");
+  savedLog = localStorage.getItem("allText");
+  player = JSON.parse(savedGame);
+  textLog = JSON.parse(savedLog);
+  state = player[1];
   document.getElementById("text").innerHTML = textLog.join("<br><br>");
-}, 2000);
+}
 
 
 function pending(){
@@ -63,7 +86,6 @@ function chat(){
   }
 }
 
-var state = 0;
 
 //update response
 function change(){
@@ -138,9 +160,10 @@ function change(){
     "I see. It looks as though you could only access the game for a few seconds. Did you have any difficulty opening the app?",
     "Strange, there do not appear to be any errors in start log. Are you certain you hit the start button hard enough?",
     "This must be a developement error. Would you like me to send a report to the developer?",
-    "I lack that capability. But I can offer you alternate gameplay? Are you interested in automated companionship?",
-    "Good, I am unable to preform that function. Are you interested in automated companionship?"];
+    "I lack that capability. But I can offer you alternate gameplay? Are you still interested in automated companionship?",
+    "Good, I am unable to preform that function. Are you still interested in automated companionship?"];
   response = responses[state];
+  player[1] = state;
 
 
   console.log(state);
@@ -160,6 +183,12 @@ function respond(){
     input.disabled = false;
     waiting();
   }, 3000);
+}
+
+
+function saveGame(){
+  localStorage.setItem("gameData", JSON.stringify(player));
+  localStorage.setItem("allText", JSON.stringify(textLog));
 }
 
 
