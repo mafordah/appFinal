@@ -147,12 +147,10 @@ function change(){
     if (message.includes("yes")){
       state = 11;
     } else if (message.includes("no")){
-      state = 12;
+      state = 12 ;
     }
   } else if (state == 11){
-    state = 13;
   } else if (state == 12){
-  } else if (state == 13){
   }
 
   var responses = [
@@ -165,11 +163,8 @@ function change(){
     "Strange, there do not appear to be any errors in start log. Are you certain you hit the start button hard enough?",
     "Please restart your game with ample button pressure",
     "This must be a developement error. Would you like me to send a report to the developer?",
-    "I lack that capability, but I can offer you alternate gameplay. Are you still interested in automated companionship?",
-    "Are you still interested in automated companionship?",
-    "Excelent, I shall proceed with companionship protocol.",
-    "There is nothing more I can do. Please restart your game and hope for a better outcome.",
-    "I am your friend now. This is what friendship feels like."];
+    "I lack that capability. But I can offer you alternate gameplay? Are you still interested in automated companionship?",
+    "Good, I am unable to preform that function. Are you still interested in automated companionship?"];
   response = responses[state];
   player[1] = state;
 
